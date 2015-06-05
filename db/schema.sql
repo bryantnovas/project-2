@@ -1,0 +1,24 @@
+\c forum_db
+
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS users; 
+DROP TABLE IF EXISTS comments;
+
+CREATE TABLE users(
+id SERIAL PRIMARY KEY,
+name VARCHAR NOT NULL
+);
+
+
+CREATE TABLE posts(
+	id SERIAL PRIMARY KEY,
+	topic VARCHAR NOT NULL,
+	votes INTEGER,
+	user_id INTEGER REFERENCES users (id)
+);
+
+CREATE TABLE comments (
+	id SERIAL PRIMARY KEY,
+	comment VARCHAR NOT NULL,
+	post_id INTEGER REFERENCES posts (id)
+);

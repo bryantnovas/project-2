@@ -1,0 +1,18 @@
+<div class="jumbotron">
+	<h1> Welcome my forum app!</h1>
+	<p>please feel free to create a new topic or browse in the existing ones</p>
+	<a href="/posts" class="btn btn-info">Go to posts <span class="glyphicon glyphicon-th-list
+"></span></a>
+</div>
+
+
+<form method="POST" action="/posts" class="form-inline">
+	<div class="form-group">
+		<label for="topic">topic: </label>
+		<input type="text "id= "topic" name="topic" placeholder="Please write your topic here!" class="form-control">
+		<label for"name">name: </label>
+		<input type="text" id="name" name="name" placeholder="Please write your name here!" class="form-control">
+		<input type="submit" value="Create post" class="btn btn-info">
+	</div>
+</form>
+

@@ -1,0 +1,9 @@
+<h1>Topics:</h1>
+<table class="table table-bordered table-hover">
+	<% @posts.each do |post| %>
+		<tr>
+		<th><a href="/post/<%= post['id'] %>" class="text-muted"><%= post['topic'] %> <span class="glyphicon glyphicon-book
+"></span> </a></th>
+		</tr>	
+	<% end %>
+</table>
