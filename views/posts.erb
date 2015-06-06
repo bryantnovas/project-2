@@ -2,9 +2,24 @@
 <table class="table table-bordered table-hover">
 	<% @posts.each do |post| %>
 		<tr>
-		<th><a href="/post/<%= post['id'] %>" class="text-muted"><%= post['topic'] %> <span class="glyphicon glyphicon-book
-"></span> </a></th>
-		</tr>	
+		<th>
+			<a href="/post/<%= post['id'] %>" class="text-muted"><%= post['topic'] %> <span class="glyphicon glyphicon-book"></span></a>
+		</th>
+
+		<th>
+			<p class="text-muted">Posted by: <%= post['name'] %> </p>	
+		</th>
+
+		<th>
+			<p class="text-muted">Comments: <%= post['comments'] %> </p>	
+		</th>
+
+		<th>
+			<p class="text-muted">Votes: <%= post['votes'] %> </p>	
+		</th>	
+	
+		</tr>
+
 	<% end %>
 </table>
-
+<a href="/" Class="btn btn-info">Go back home <span class="glyphicon glyphicon-home"></span></a>
