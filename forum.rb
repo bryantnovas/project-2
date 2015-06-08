@@ -50,8 +50,7 @@ module App
   	post '/comment/:id' do
   		comment = params['comment']
   		id = params['id']
-  		count = $db.exec_params("SELECT count(comment) FROM comments WHERE post_id = $1",[id])
-  		$db.exec_params("INSERT INTO comments (comment,comment_count,post_id) VALUES ($1, $2, $3)",[comment,count,id])
+  		$db.exec_params("INSERT INTO comments (comment,post_id) VALUES ($1, $2)",[comment,id]).first
   		redirect "/posts/#{id}"
   	end
 	end #class
