@@ -24,6 +24,7 @@ module App
 		get '/posts' do
 			query = "SELECT * FROM posts JOIN users ON posts.id = users.id ORDER BY votes DESC"
 			@posts = $db.exec(query)
+
 			erb :posts
 			# get all the posts from the database
 			# render the posts
@@ -49,7 +50,8 @@ module App
   	post '/comment/:id' do
   		comment = params['comment']
   		id = params['id']
-  		$db.exec_params("INSERT INTO comments (comment, post_id) VALUES ($1, $2)",[comment,id])
+  		count = $db.exec_params("SELECT count(comment) FROM comments WHERE post_id = $1",[id])
+  		$db.exec_params("INSERT INTO comments (comment,comment_count,post_id) VALUES ($1, $2, $3)",[comment,count,id])
   		redirect "/posts/#{id}"
   	end
 	end #class

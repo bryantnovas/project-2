@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS comments CASCADE;
 CREATE TABLE users(
 id SERIAL PRIMARY KEY,
 name VARCHAR NOT NULL,
-location VARCHAR	
+location VARCHAR
 );
 
 
@@ -20,5 +20,6 @@ CREATE TABLE posts(
 CREATE TABLE comments (
 	id SERIAL PRIMARY KEY,
 	comment VARCHAR NOT NULL,
+	comment_count INTEGER,
 	post_id INTEGER REFERENCES posts (id)
 );
