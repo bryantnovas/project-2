@@ -9,4 +9,4 @@ for this project I used the following APIs :
 1. redcarpet, takes a string and renders it into markdown. I used it to display the user comments to in a very organize and styled way.
 
 Here is how the app basically works:
-![Alt Text](/project-2.png)
+![Alt Text](/Project-2.png)
