@@ -1,0 +1,9 @@
+<div class="jumbotron">
+	<h1>Please write your comment using markdown</h1>
+</div>
+<form action="/comment/<%= @id %> " method="POST">
+	<textarea name="comment" placeholder="Type here..."></textarea>
+	<div>
+		<input type="submit" value="Post comment" class="btn btn-info">
+	</div>
+</form>

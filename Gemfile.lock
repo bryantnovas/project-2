@@ -53,3 +53,6 @@ DEPENDENCIES
   rest-client
   sinatra
   sinatra-contrib
+
+BUNDLED WITH
+   1.10.3

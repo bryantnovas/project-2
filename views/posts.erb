@@ -1,25 +1,26 @@
 <h1>Topics:</h1>
-<table class="table table-bordered table-hover">
+<table class="table table-striped table-hover">
 	<% @posts.each do |post| %>
 		<tr>
 		<th>
-			<a href="/post/<%= post['id'] %>" class="text-muted"><%= post['topic'] %> <span class="glyphicon glyphicon-book"></span></a>
+			<a href="/posts/<%= post['id'] %>" class="text-muted"><%= post['topic'] %> <span class="glyphicon glyphicon-book"></span></a>
 		</th>
 
 		<th>
-			<p class="text-muted">Posted by: <%= post['name'] %> <%= post['region'] %></p>	
+			<p class="text-muted">Posted by: <%= post['name'] %> From: <%= post['location'] %></p>
 		</th>
 
 		<th>
-			<p class="text-muted">Comments: <%= post['comments'] %> </p>	
+			<p class="text-muted">Comments: <span class="badge"><%= post['comments'] %></span> </p>	
 		</th>
 
 		<th>
-			<p class="text-muted">Votes: <%= post['votes'] %> </p>	
+			<p class="text-muted">Votes: <span class="badge"> <%= post['votes'] %></span> </p>	
 		</th>	
 	
 		</tr>
 
 	<% end %>
 </table>
+
 <a href="/" Class="btn btn-info">Go back home <span class="glyphicon glyphicon-home"></span></a>

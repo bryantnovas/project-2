@@ -1,0 +1,22 @@
+<div class="jumbotron text-info">
+	<h1> <%= @post['topic'] %> </h1>
+	<form action="/posts/<%= @post['id'] %>" method="POST">
+		<input type="hidden" name="_method" value="patch">
+		<input type="submit" value="vote + 1" class="btn btn-info ">
+	</form>
+</div>
+	
+<div>
+	<% if @comments == nil %>
+	<% else %> 
+		<% @comments.each do |comment| %>
+			<blockquote><%= Markdown.new(comment['comment']).to_html %></blockquote>
+		<% end %>
+	<% end %>	
+</div>
+<div class="row">
+	<a href="/posts" class="btn btn-info">Go back to posts <span class="glyphicon glyphicon-th-list"></span></a>
+
+	<a href="/comment/<%= @post['id']%>" class="btn btn-info">Leave a comment <span class="glyphicon glyphicon-comment"></span></a>
+</div>
+
